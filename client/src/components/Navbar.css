@@ -1,0 +1,978 @@
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  height: 82px;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 9999;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20, 21, 33, 0.98),
+      rgba(13, 14, 23, 0.96)
+    );
+
+  border-bottom: 1px solid var(--border);
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+/* GOLD LINE */
+
+.navbar::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -1px;
+
+  left: 10%;
+  right: 10%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(244, 198, 91, 0.7),
+      transparent
+    );
+
+  box-shadow:
+    0 0 15px rgba(244, 198, 91, 0.45);
+}
+
+
+/* =========================================
+   NAVBAR INNER
+========================================= */
+
+.navbar-inner {
+  max-width: 1480px;
+
+  width: calc(100% - 60px);
+
+  height: 100%;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 45px;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  text-decoration: none;
+
+  flex-shrink: 0;
+}
+
+
+.brand-mark {
+  width: 43px;
+  height: 43px;
+
+  transform: rotate(45deg);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(244, 198, 91, 0.65);
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(244, 198, 91, 0.16),
+      rgba(244, 198, 91, 0.025)
+    );
+
+  box-shadow:
+    0 0 20px rgba(244, 198, 91, 0.12);
+}
+
+
+.brand-mark span {
+  transform: rotate(-45deg);
+
+  color: var(--gold-light);
+
+  font-size: 22px;
+
+  font-weight: 900;
+}
+
+
+.brand-name {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.brand-name strong {
+  font-size: 19px;
+
+  letter-spacing: 3px;
+
+  color: white;
+}
+
+
+.brand-name small {
+  margin-top: 3px;
+
+  font-size: 8px;
+
+  letter-spacing: 4px;
+
+  color: var(--gold);
+}
+
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+
+.nav-item {
+  position: relative;
+
+  height: 46px;
+
+  padding: 0 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #9296a8;
+
+  text-decoration: none;
+
+  border-radius: 13px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+
+.nav-item span {
+  font-size: 16px;
+
+  color: #6f7383;
+}
+
+
+.nav-item:hover {
+  color: white;
+
+  background:
+    rgba(244, 198, 91, 0.08);
+}
+
+
+.nav-item.active {
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(244, 198, 91, 0.14),
+      rgba(244, 198, 91, 0.025)
+    );
+}
+
+
+.nav-item.active span {
+  color: var(--gold);
+}
+
+
+.nav-item.active::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -1px;
+
+  left: 25%;
+
+  width: 50%;
+
+  height: 2px;
+
+  border-radius: 10px;
+
+  background: var(--gold);
+
+  box-shadow:
+    0 0 8px var(--gold);
+}
+
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.nav-right {
+  margin-left: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* =========================================
+   GEM BALANCE
+========================================= */
+
+.mini-balance {
+  height: 46px;
+
+  padding: 0 13px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  border-radius: 13px;
+
+  border: 1px solid rgba(244, 198, 91, 0.15);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(244, 198, 91, 0.09),
+      rgba(255, 255, 255, 0.015)
+    );
+}
+
+
+.gem-icon {
+  width: 27px;
+  height: 27px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 8px;
+
+  color: var(--gold-light);
+
+  background: rgba(244, 198, 91, 0.12);
+
+  font-size: 9px;
+}
+
+
+.mini-balance div:last-child {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.mini-balance small {
+  font-size: 7px;
+
+  color: #74788b;
+
+  letter-spacing: 1px;
+}
+
+
+.mini-balance strong {
+  font-size: 12px;
+
+  color: white;
+}
+
+
+/* =========================================
+   NOTIFICATION
+========================================= */
+
+.notification {
+  position: relative;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255,255,255,0.07);
+
+  background: rgba(255,255,255,0.025);
+
+  color: #aaaebe;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+
+.notification:hover {
+  color: var(--gold);
+
+  border-color:
+    rgba(244,198,91,0.25);
+}
+
+
+.notification i {
+  position: absolute;
+
+  top: 8px;
+  right: 8px;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--gold);
+
+  box-shadow:
+    0 0 10px var(--gold);
+}
+
+
+/* =========================================
+   PROFILE WRAPPER
+========================================= */
+
+.profile-wrapper {
+  position: relative;
+
+  z-index: 10000;
+}
+
+
+/* =========================================
+   PROFILE BUTTON
+========================================= */
+
+.profile {
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 4px 10px 4px 5px;
+
+  border-radius: 13px;
+
+  border: 1px solid rgba(255,255,255,0.07);
+
+  background:
+    rgba(255,255,255,0.025);
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+
+.profile:hover,
+.profile-open {
+  border-color:
+    rgba(244,198,91,0.35);
+
+  background:
+    rgba(244,198,91,0.07);
+
+  box-shadow:
+    0 0 25px rgba(244,198,91,0.10);
+}
+
+
+/* AVATAR */
+
+.avatar {
+  width: 35px;
+  height: 35px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffe39a,
+      #b57a13
+    );
+
+  color: #17130b;
+
+  font-weight: 900;
+}
+
+
+/* PROFILE NAME */
+
+.profile-name {
+  display: flex;
+
+  flex-direction: column;
+
+  text-align: left;
+}
+
+
+.profile-name strong {
+  font-size: 11px;
+
+  color: white;
+}
+
+
+.profile-name small {
+  color: #737789;
+
+  font-size: 8px;
+
+  margin-top: 2px;
+}
+
+
+.profile-arrow {
+  color: #777b8c;
+
+  margin-left: 5px;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   ACCOUNT DROPDOWN
+========================================= */
+
+.account-dropdown {
+  position: absolute;
+
+  top: calc(100% + 12px);
+
+  right: 0;
+
+  width: 330px;
+
+  padding: 16px;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(244,198,91,0.25);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(31,32,48,0.99),
+      rgba(14,15,26,0.99)
+    );
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.65),
+    0 0 35px rgba(244,198,91,0.08);
+
+  backdrop-filter: blur(30px);
+
+  animation: accountDrop 0.2s ease;
+
+  overflow: hidden;
+}
+
+
+/* SMALL GOLD GLOW */
+
+.account-dropdown::before {
+  content: "";
+
+  position: absolute;
+
+  top: -60px;
+
+  right: -60px;
+
+  width: 130px;
+  height: 130px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(244,198,91,0.08);
+
+  filter: blur(30px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   ACCOUNT HEADER
+========================================= */
+
+.account-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 4px 4px 14px;
+}
+
+
+.account-avatar {
+  width: 45px;
+  height: 45px;
+
+  display: grid;
+
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffe39a,
+      #b57a13
+    );
+
+  color: #17130b;
+
+  font-size: 18px;
+
+  font-weight: 900;
+}
+
+
+.account-header div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+
+.account-header strong {
+  color: white;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+.account-header span {
+  margin-top: 3px;
+
+  color: #85899c;
+
+  font-size: 10px;
+}
+
+
+/* =========================================
+   ACCOUNT BALANCES
+========================================= */
+
+.account-balances {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 8px;
+
+  margin-bottom: 4px;
+}
+
+
+.account-balances > div {
+  padding: 10px 12px;
+
+  border-radius: 11px;
+
+  background:
+    rgba(255,255,255,0.035);
+
+  border: 1px solid
+    rgba(255,255,255,0.05);
+}
+
+
+.account-balances small {
+  display: block;
+
+  color: #777b8e;
+
+  font-size: 8px;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 3px;
+}
+
+
+.account-balances strong {
+  color: white;
+
+  font-size: 14px;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.dropdown-divider {
+  height: 1px;
+
+  margin: 10px 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.10),
+      transparent
+    );
+}
+
+
+/* =========================================
+   MENU ITEM
+========================================= */
+
+.account-menu-item {
+  width: 100%;
+
+  min-height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 9px 10px;
+
+  margin: 3px 0;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background: transparent;
+
+  color: white;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  transition: 0.25s ease;
+
+  appearance: none;
+}
+
+
+.account-menu-item:hover {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(244,198,91,0.12),
+      rgba(244,198,91,0.035)
+    );
+
+  transform: translateX(2px);
+}
+
+
+/* ICON */
+
+.menu-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 9px;
+
+  color: var(--gold);
+
+  background:
+    rgba(244,198,91,0.08);
+
+  border: 1px solid
+    rgba(244,198,91,0.12);
+
+  font-size: 15px;
+}
+
+
+/* TEXT */
+
+.account-menu-item > div {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.account-menu-item strong {
+  color: #f5f5f7;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.account-menu-item small {
+  color: #777b8d;
+
+  font-size: 9px;
+
+  margin-top: 3px;
+}
+
+
+/* ARROW */
+
+.menu-arrow {
+  color: #65697b;
+
+  font-size: 15px;
+
+  transition: 0.2s ease;
+}
+
+
+.account-menu-item:hover .menu-arrow {
+  color: var(--gold);
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+.logout-item:hover {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,80,80,0.10),
+      rgba(255,80,80,0.025)
+    );
+}
+
+
+.logout-item .menu-icon {
+  color: #ff8a8a;
+
+  background:
+    rgba(255,80,80,0.07);
+
+  border-color:
+    rgba(255,80,80,0.12);
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes accountDrop {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-8px)
+      scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .navbar-inner {
+    width: calc(100% - 30px);
+
+    gap: 20px;
+  }
+
+  .nav-item {
+    padding: 0 11px;
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .navbar {
+    height: 74px;
+  }
+
+  .navbar-inner {
+    width: calc(100% - 24px);
+  }
+
+  .nav-links {
+    position: absolute;
+
+    top: calc(100% + 10px);
+
+    left: 12px;
+    right: 12px;
+
+    display: none;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    padding: 12px;
+
+    border-radius: 18px;
+
+    background:
+      rgba(17,18,28,0.98);
+
+    border:
+      1px solid rgba(244,198,91,0.16);
+  }
+
+  .mini-balance {
+    display: none;
+  }
+
+  .account-dropdown {
+    right: 0;
+
+    width: 310px;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .brand-name strong {
+    font-size: 16px;
+  }
+
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .notification {
+    display: none;
+  }
+
+  .profile-name {
+    display: none;
+  }
+
+  .account-dropdown {
+    position: fixed;
+
+    top: 82px;
+
+    right: 12px;
+
+    width: calc(100vw - 24px);
+
+    max-width: 330px;
+  }
+
+}

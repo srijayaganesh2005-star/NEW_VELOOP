@@ -1,0 +1,147 @@
+.footer {
+  border-top: 1px solid rgba(244,198,91,0.08);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15,16,26,0.6),
+      #0c0d15
+    );
+
+  padding: 45px 0 20px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+
+  width: calc(100% - 50px);
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+.footer-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.footer-logo {
+  width: 35px;
+  height: 35px;
+
+  display: grid;
+  place-items: center;
+
+  transform: rotate(45deg);
+
+  border: 1px solid rgba(244,198,91,0.35);
+
+  border-radius: 8px;
+
+  color: var(--gold);
+
+  box-shadow:
+    0 0 15px rgba(244,198,91,0.07);
+}
+
+.footer-brand strong {
+  display: block;
+
+  font-family: "Outfit";
+
+  font-size: 15px;
+
+  letter-spacing: 2px;
+}
+
+.footer-brand small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--gold);
+
+  font-size: 6px;
+
+  letter-spacing: 3px;
+}
+
+.footer-inner > p {
+  color: #666a79;
+
+  font-size: 10px;
+}
+
+.footer-links {
+  display: flex;
+
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #777b8c;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+
+  width: calc(100% - 50px);
+
+  margin: 35px auto 0;
+
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(255,255,255,0.04);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  color: #505463;
+
+  font-size: 8px;
+}
+
+@media (max-width: 700px) {
+
+  .footer-inner {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+
+    gap: 8px;
+
+    text-align: center;
+  }
+
+}

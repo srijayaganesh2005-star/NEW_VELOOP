@@ -1,0 +1,400 @@
+/* =============================== */
+/* HOW EXCHANGE WORKS */
+/* =============================== */
+
+.howExchangeWorks {
+  margin-top: 40px;
+  padding: 42px 40px;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(139, 92, 246, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(79, 70, 229, 0.15),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #3f425c,
+      #30334a
+    );
+
+  border: 1px solid rgba(139, 105, 255, 0.55);
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25),
+    0 0 40px rgba(124, 77, 255, 0.12);
+}
+
+
+/* =============================== */
+/* HEADER */
+/* =============================== */
+
+.header {
+  margin-bottom: 30px;
+}
+
+.header h2 {
+  margin: 0 0 10px;
+
+  color: #ffffff;
+
+  font-size: 2rem;
+
+  font-weight: 800;
+}
+
+.header p {
+  margin: 0;
+
+  color: #d7d9e6;
+
+  font-size: 1rem;
+
+  font-weight: 500;
+}
+
+
+/* =============================== */
+/* STEPS - HORIZONTAL */
+/* =============================== */
+
+.stepsContainer {
+  display: grid;
+
+  grid-template-columns:
+    minmax(220px, 1fr)
+    60px
+    minmax(220px, 1fr)
+    60px
+    minmax(220px, 1fr);
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+
+/* =============================== */
+/* STEP CARD */
+/* =============================== */
+
+.stepCard {
+  position: relative;
+
+  min-height: 230px;
+
+  padding: 32px 30px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #343850,
+      #292d42
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 26px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 12px 30px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* =============================== */
+/* PURPLE GLOW */
+/* =============================== */
+
+.stepCard::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  top: -100px;
+  right: -80px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(139, 92, 246, 0.2);
+
+  filter: blur(35px);
+
+  pointer-events: none;
+}
+
+
+/* =============================== */
+/* DIFFERENT COLORS FOR CARDS */
+/* =============================== */
+
+
+/* CARD 1 - PURPLE */
+
+.stepCard:nth-of-type(1) {
+  background:
+    linear-gradient(
+      145deg,
+      #3b3658,
+      #292d42
+    );
+
+  border-color:
+    rgba(139, 92, 246, 0.35);
+}
+
+
+/* CARD 2 - BLUE/PURPLE */
+
+.stepCard:nth-of-type(3) {
+  background:
+    linear-gradient(
+      145deg,
+      #343a58,
+      #292d42
+    );
+
+  border-color:
+    rgba(99, 102, 241, 0.35);
+}
+
+
+/* CARD 3 - GOLD/PURPLE */
+
+.stepCard:nth-of-type(5) {
+  background:
+    linear-gradient(
+      145deg,
+      #3c394d,
+      #292d42
+    );
+
+  border-color:
+    rgba(255, 193, 92, 0.3);
+}
+
+
+/* =============================== */
+/* HOVER */
+/* =============================== */
+
+.stepCard:hover {
+  transform: translateY(-6px);
+
+  border-color:
+    rgba(167, 139, 250, 0.75);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(124, 77, 255, 0.2);
+}
+
+
+/* =============================== */
+/* STEP NUMBER */
+/* =============================== */
+
+.stepNumber {
+  position: absolute;
+
+  top: 30px;
+
+  left: 30px;
+
+  color: #c4b5fd;
+
+  font-size: 0.9rem;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* =============================== */
+/* ICONS */
+/* =============================== */
+
+.gemIcon,
+.stepIcon,
+.coinIcon {
+  position: absolute;
+
+  top: 24px;
+
+  left: 72px;
+}
+
+
+/* GEM - PURPLE */
+
+.gemIcon {
+  color: #b69cff;
+
+  filter:
+    drop-shadow(
+      0 0 12px
+      rgba(139, 92, 246, 0.7)
+    );
+}
+
+
+/* CONFIRM - BLUE/PURPLE */
+
+.stepIcon {
+  color: #a5b4fc;
+
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(99, 102, 241, 0.6)
+    );
+}
+
+
+/* COIN - GOLD */
+
+.coinIcon {
+  color: #ffd166;
+
+  filter:
+    drop-shadow(
+      0 0 12px
+      rgba(255, 190, 80, 0.6)
+    );
+}
+
+
+/* =============================== */
+/* CARD TITLE */
+/* =============================== */
+
+.stepCard h3 {
+  position: relative;
+
+  margin: 85px 0 12px;
+
+  color: #ffffff;
+
+  font-size: 1.65rem;
+
+  font-weight: 800;
+
+  z-index: 1;
+}
+
+
+/* =============================== */
+/* DESCRIPTION */
+/* =============================== */
+
+.stepCard p {
+  position: relative;
+
+  margin: 0;
+
+  color: #d5d8e5;
+
+  font-size: 1rem;
+
+  line-height: 1.6;
+
+  z-index: 1;
+}
+
+
+/* =============================== */
+/* ARROWS BETWEEN CARDS */
+/* =============================== */
+
+.arrow {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #b69cff;
+
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(139, 92, 246, 0.7)
+    );
+}
+
+
+/* =============================== */
+/* TABLET - STILL HORIZONTAL */
+/* =============================== */
+
+@media (max-width: 1100px) {
+
+  .howExchangeWorks {
+    padding: 35px 28px;
+  }
+
+  .stepsContainer {
+    grid-template-columns:
+      minmax(180px, 1fr)
+      40px
+      minmax(180px, 1fr)
+      40px
+      minmax(180px, 1fr);
+
+    gap: 12px;
+  }
+
+  .stepCard {
+    padding: 28px 24px;
+  }
+
+  .stepCard h3 {
+    font-size: 1.4rem;
+  }
+
+}
+
+
+/* =============================== */
+/* MOBILE */
+/* =============================== */
+
+@media (max-width: 700px) {
+
+  .howExchangeWorks {
+    padding: 28px 20px;
+  }
+
+  .stepsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+  }
+
+  .stepCard {
+    min-height: 180px;
+  }
+
+}

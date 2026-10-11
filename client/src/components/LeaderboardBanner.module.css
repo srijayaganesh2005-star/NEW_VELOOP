@@ -1,0 +1,1099 @@
+/* =========================================================
+   MAIN BANNER
+========================================================= */
+
+.banner {
+  position: relative;
+
+  width: 100%;
+  min-height: 560px;
+
+  padding: 55px 50px;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  /* SPACE BETWEEN LEADERBOARD AND NEXT BANNER */
+  margin-bottom: 30px;
+
+  border: 1px solid rgba(235, 184, 68, 0.65);
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      circle at 75% 35%,
+      rgba(255, 190, 50, 0.16),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 20% 75%,
+      rgba(40, 90, 200, 0.10),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 55% 100%,
+      rgba(235, 170, 40, 0.08),
+      transparent 45%
+    ),
+    #070b13;
+
+  color: white;
+
+  box-shadow:
+    inset 0 0 100px rgba(30, 70, 140, 0.08),
+    0 0 35px rgba(235, 184, 68, 0.08);
+}
+
+
+/* =========================================================
+   GOLD BACKGROUND GLOW
+========================================================= */
+
+.goldGlow {
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  right: 18%;
+  top: -250px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 190, 50, 0.10);
+
+  filter: blur(110px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   BLUE BACKGROUND GLOW
+========================================================= */
+
+.blueGlow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  left: -250px;
+  bottom: -250px;
+
+  border-radius: 50%;
+
+  background: rgba(40, 90, 200, 0.08);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.left {
+  position: relative;
+
+  width: 42%;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 17px;
+
+  border: 1px solid rgba(235, 184, 68, 0.40);
+
+  border-radius: 14px;
+
+  background: rgba(235, 184, 68, 0.06);
+
+  color: #e8c55f;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  box-shadow:
+    0 0 15px rgba(235, 184, 68, 0.05);
+}
+
+
+/* =========================================================
+   BADGE ICON
+========================================================= */
+
+.badgeIcon {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dcae3c;
+
+  border-radius: 50%;
+
+  color: #e6b83e;
+
+  box-shadow:
+    0 0 12px rgba(235, 184, 68, 0.15);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.heading {
+  margin: 35px 0 20px;
+
+  font-size: clamp(50px, 5vw, 76px);
+
+  line-height: 0.98;
+
+  letter-spacing: -2px;
+
+  font-weight: 700;
+
+  color: #f5f5f5;
+}
+
+
+.heading span {
+  color: #e9b936;
+
+  text-shadow:
+    0 0 20px rgba(233, 185, 54, 0.12);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+  margin: 0 0 35px;
+
+  color: #aeb6c7;
+
+  font-size: 20px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   LEADERBOARD BUTTON
+========================================================= */
+
+.leaderboardButton {
+  height: 68px;
+
+  min-width: 340px;
+
+  padding: 0 28px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  border: none;
+
+  border-radius: 35px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffd45f,
+      #e5a62f
+    );
+
+  color: #111;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(235, 175, 45, 0.20),
+    0 0 20px rgba(235, 175, 45, 0.08);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.leaderboardButton:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 35px rgba(235, 175, 45, 0.35),
+    0 0 30px rgba(235, 175, 45, 0.18);
+}
+
+
+.leaderboardButton:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   RIGHT SIDE IMAGE AREA
+========================================================= */
+
+.visual {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 58%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  z-index: 5;
+
+  pointer-events: none;
+
+  background: transparent;
+}
+
+
+/* =========================================================
+   LEADERBOARD IMAGE
+   CENTERED
+========================================================= */
+
+.leaderboardImage {
+  position: relative;
+
+  top: auto;
+  right: auto;
+
+  width: 82%;
+  height: 82%;
+
+  max-width: 760px;
+  max-height: 500px;
+
+  object-fit: contain;
+
+  object-position: center center;
+
+  display: block;
+
+  margin: auto;
+
+  background: transparent;
+
+  filter:
+    drop-shadow(
+      0 0 20px
+      rgba(235, 184, 68, 0.25)
+    )
+    drop-shadow(
+      0 0 50px
+      rgba(235, 184, 68, 0.15)
+    );
+}
+
+
+/* =========================================================
+   GOLD GLOW BEHIND IMAGE
+========================================================= */
+
+.visual::before {
+  content: "";
+
+  position: absolute;
+
+  width: 550px;
+  height: 550px;
+
+  right: 8%;
+  top: 5%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 190, 50, 0.16),
+      rgba(255, 180, 40, 0.06) 45%,
+      transparent 75%
+    );
+
+  filter: blur(80px);
+
+  z-index: -1;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MODAL OVERLAY
+========================================================= */
+
+.overlay {
+  position: fixed;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: rgba(0, 0, 0, 0.75);
+
+  backdrop-filter: blur(8px);
+
+  z-index: 100;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal {
+  position: relative;
+
+  width: 430px;
+  max-width: 100%;
+
+  padding: 40px;
+
+  box-sizing: border-box;
+
+  border-radius: 22px;
+
+  border: 1px solid rgba(235, 184, 68, 0.45);
+
+  background:
+    linear-gradient(
+      145deg,
+      #151d2c,
+      #080c14
+    );
+
+  box-shadow:
+    0 0 50px rgba(235, 184, 68, 0.15);
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   MODAL TROPHY
+========================================================= */
+
+.modalTrophy {
+  color: #e9b936;
+
+  filter:
+    drop-shadow(
+      0 0 15px
+      rgba(255, 190, 50, 0.5)
+    );
+}
+
+
+/* =========================================================
+   MODAL HEADING
+========================================================= */
+
+.modal h2 {
+  margin: 15px 0 5px;
+
+  font-size: 30px;
+
+  color: #f5f5f5;
+}
+
+
+/* =========================================================
+   MODAL DESCRIPTION
+========================================================= */
+
+.modal p {
+  margin-bottom: 20px;
+
+  color: #9fa8b9;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.closeButton {
+  position: absolute;
+
+  right: 15px;
+  top: 12px;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: white;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.closeButton:hover {
+  background: rgba(235, 184, 68, 0.18);
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   MODAL PLAYER LIST
+========================================================= */
+
+.modalList {
+  margin-top: 25px;
+}
+
+
+/* =========================================================
+   MODAL PLAYER
+========================================================= */
+
+.modalPlayer {
+  display: grid;
+
+  grid-template-columns: 45px 1fr auto;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px;
+
+  margin-bottom: 8px;
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  color: #eee;
+}
+
+
+.modalPlayer strong {
+  color: #e9b936;
+}
+
+
+.modalPlayer b {
+  color: #e9b936;
+}
+
+
+/* =========================================================
+   LAPTOP / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .banner {
+    min-height: 580px;
+
+    padding: 50px 40px;
+
+    margin-bottom: 30px;
+  }
+
+
+  .left {
+    width: 44%;
+  }
+
+
+  .heading {
+    font-size: 60px;
+  }
+
+
+  .description {
+    font-size: 18px;
+  }
+
+
+  .visual {
+    width: 56%;
+    height: 100%;
+
+    right: 0;
+  }
+
+
+  .leaderboardImage {
+    width: 80%;
+    height: 80%;
+
+    max-width: 650px;
+    max-height: 500px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .banner {
+    min-height: 720px;
+
+    padding: 40px 30px;
+
+    margin-bottom: 30px;
+  }
+
+
+  .left {
+    width: 48%;
+
+    z-index: 10;
+  }
+
+
+  .heading {
+    font-size: 54px;
+
+    line-height: 1;
+  }
+
+
+  .description {
+    font-size: 18px;
+  }
+
+
+  .leaderboardButton {
+    min-width: 280px;
+
+    height: 62px;
+
+    font-size: 18px;
+  }
+
+
+  .visual {
+    top: 40px;
+    right: 0;
+
+    width: 55%;
+    height: 520px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    z-index: 5;
+  }
+
+
+  .leaderboardImage {
+    position: relative;
+
+    top: auto;
+    right: auto;
+
+    width: 80%;
+    height: 80%;
+
+    max-width: 580px;
+    max-height: 470px;
+
+    object-fit: contain;
+
+    object-position: center center;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET SMALL
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .banner {
+    min-height: 760px;
+
+    padding: 35px 25px;
+
+    margin-bottom: 30px;
+  }
+
+
+  .left {
+    width: 50%;
+  }
+
+
+  .heading {
+    font-size: 48px;
+  }
+
+
+  .description {
+    font-size: 17px;
+  }
+
+
+  .leaderboardButton {
+    min-width: 250px;
+
+    height: 58px;
+
+    font-size: 17px;
+
+    padding: 0 20px;
+  }
+
+
+  .visual {
+    top: 50px;
+    right: 0;
+
+    width: 55%;
+    height: 500px;
+  }
+
+
+  .leaderboardImage {
+    width: 78%;
+    height: 78%;
+
+    max-width: 520px;
+    max-height: 440px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .banner {
+    width: 100%;
+
+    min-height: 900px;
+
+    padding: 30px 18px;
+
+    margin-bottom: 25px;
+
+    overflow: hidden;
+  }
+
+
+  /* BACKGROUND GLOWS */
+
+  .goldGlow {
+    width: 350px;
+
+    height: 350px;
+
+    right: -150px;
+
+    top: -100px;
+
+    filter: blur(80px);
+  }
+
+
+  .blueGlow {
+    width: 300px;
+
+    height: 300px;
+
+    left: -150px;
+
+    bottom: -100px;
+
+    filter: blur(80px);
+  }
+
+
+  /* LEFT CONTENT */
+
+  .left {
+    width: 100%;
+
+    position: relative;
+
+    z-index: 10;
+
+    text-align: left;
+  }
+
+
+  .badge {
+    font-size: 12px;
+
+    padding: 8px 13px;
+  }
+
+
+  .heading {
+    margin-top: 25px;
+
+    margin-bottom: 18px;
+
+    font-size: 44px;
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+  }
+
+
+  .description {
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+
+    max-width: 350px;
+  }
+
+
+  /* BUTTON */
+
+  .leaderboardButton {
+    width: 250px;
+
+    min-width: 0;
+
+    height: 60px;
+
+    padding: 0 18px;
+
+    font-size: 18px;
+
+    gap: 10px;
+  }
+
+
+  /* MOBILE ARTWORK */
+
+  .visual {
+    position: absolute;
+
+    top: 390px;
+
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    height: 430px;
+
+    margin: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    background: transparent;
+  }
+
+
+  .leaderboardImage {
+    position: relative;
+
+    top: auto;
+    right: auto;
+
+    width: 82%;
+    height: 82%;
+
+    max-width: 500px;
+    max-height: 390px;
+
+    object-fit: contain;
+
+    object-position: center center;
+
+    display: block;
+
+    transform: none;
+
+    background: transparent;
+  }
+
+
+  /* MODAL */
+
+  .modal {
+    width: calc(100% - 30px);
+
+    max-width: 430px;
+
+    padding: 30px 20px;
+  }
+
+
+  .modal h2 {
+    font-size: 26px;
+  }
+
+
+  .modalPlayer {
+    grid-template-columns: 35px 1fr auto;
+
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .banner {
+    min-height: 880px;
+
+    padding: 28px 16px;
+
+    margin-bottom: 25px;
+  }
+
+
+  .badge {
+    font-size: 11px;
+
+    padding: 7px 11px;
+
+    gap: 7px;
+  }
+
+
+  .badgeIcon {
+    width: 25px;
+
+    height: 25px;
+  }
+
+
+  .heading {
+    font-size: 39px;
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+  }
+
+
+  .description {
+    font-size: 15px;
+
+    max-width: 320px;
+  }
+
+
+  .leaderboardButton {
+    width: 245px;
+
+    height: 58px;
+
+    font-size: 17px;
+  }
+
+
+  .visual {
+    top: 380px;
+
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    height: 400px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .leaderboardImage {
+    width: 78%;
+    height: 78%;
+
+    max-width: 450px;
+    max-height: 360px;
+
+    object-fit: contain;
+
+    object-position: center center;
+
+    transform: none;
+  }
+
+
+  .modal {
+    width: calc(100% - 24px);
+
+    padding: 25px 16px;
+  }
+
+
+  .modalPlayer {
+    grid-template-columns: 30px 1fr auto;
+
+    gap: 7px;
+
+    padding: 11px;
+
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .banner {
+    min-height: 850px;
+
+    padding: 25px 14px;
+
+    margin-bottom: 25px;
+  }
+
+
+  .heading {
+    font-size: 35px;
+  }
+
+
+  .description {
+    font-size: 14px;
+
+    max-width: 290px;
+  }
+
+
+  .leaderboardButton {
+    width: 225px;
+
+    height: 55px;
+
+    font-size: 16px;
+  }
+
+
+  .visual {
+    top: 370px;
+
+    height: 370px;
+  }
+
+
+  .leaderboardImage {
+    width: 75%;
+    height: 75%;
+
+    max-width: 400px;
+    max-height: 330px;
+  }
+
+}

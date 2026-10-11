@@ -1,0 +1,317 @@
+/* =========================================
+   EXCHANGE HISTORY
+========================================= */
+
+.historySection {
+  margin-top: 50px;
+
+  padding: 32px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(42, 45, 67, 0.96),
+      rgba(27, 30, 46, 0.98)
+    );
+
+  border: 1px solid rgba(124, 77, 255, 0.2);
+
+  border-radius: 26px;
+
+  box-shadow:
+    0 16px 45px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+
+.titleArea {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.icon {
+  color: #a98cff;
+
+  filter:
+    drop-shadow(
+      0 0 8px
+      rgba(124, 77, 255, 0.4)
+    );
+}
+
+
+.title {
+  margin: 0 0 5px;
+
+  color: #ffffff;
+
+  font-size: 1.5rem;
+
+  font-weight: 750;
+}
+
+
+.subtitle {
+  margin: 0;
+
+  color: #aab3c9;
+
+  font-size: 0.9rem;
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.emptyState {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 280px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  background: rgba(20, 23, 36, 0.45);
+
+  border:
+    1px dashed
+    rgba(124, 77, 255, 0.25);
+
+  border-radius: 20px;
+}
+
+
+.emptyIcon {
+  margin-bottom: 18px;
+
+  color: #9b7cff;
+
+  filter:
+    drop-shadow(
+      0 0 18px
+      rgba(124, 77, 255, 0.35)
+    );
+}
+
+
+.emptyTitle {
+  margin: 0 0 10px;
+
+  color: #ffffff;
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+}
+
+
+.emptyText {
+  max-width: 400px;
+
+  margin: 0;
+
+  color: #aeb6cc;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   HISTORY LIST
+========================================= */
+
+.historyList {
+  display: grid;
+
+  gap: 14px;
+}
+
+
+.historyItem {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(40, 43, 65, 0.9),
+      rgba(24, 27, 42, 0.9)
+    );
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  border-radius: 18px;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.historyItem:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(124, 77, 255, 0.45);
+
+  box-shadow:
+    0 12px 30px
+    rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   CONVERSION INFORMATION
+========================================= */
+
+.historyInfo {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+.historyConversion {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+}
+
+
+.gemValue,
+.veValue {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.gemValue {
+  color: #cbbaff;
+}
+
+
+.veValue {
+  color: #ffd27a;
+}
+
+
+.arrow {
+  color: #9b7cff;
+
+  font-size: 1.3rem;
+
+  font-weight: 800;
+}
+
+
+.historyDate {
+  margin: 0;
+
+  color: #8e97ae;
+
+  font-size: 0.8rem;
+}
+
+
+/* =========================================
+   SUCCESS STATUS
+========================================= */
+
+.status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 8px 14px;
+
+  color: #70e5a0;
+
+  background:
+    rgba(64, 210, 128, 0.1);
+
+  border:
+    1px solid
+    rgba(64, 210, 128, 0.2);
+
+  border-radius: 30px;
+
+  font-size: 0.75rem;
+
+  font-weight: 800;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .historySection {
+    padding: 20px;
+  }
+
+  .historyItem {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .status {
+    align-self: flex-start;
+  }
+
+  .historyConversion {
+    flex-wrap: wrap;
+  }
+
+}

@@ -1,0 +1,979 @@
+/* =========================================================
+   MAIN BANNER
+========================================================= */
+
+.banner {
+  position: relative;
+
+  width: 100%;
+  min-height: 560px;
+
+  /* SPACE BETWEEN PREVIOUS BANNER AND THIS BANNER */
+  margin-top: 35px;
+
+  padding: 50px 50px 55px;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  border: 1px solid rgba(190, 165, 255, 0.28);
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      circle at 72% 40%,
+      rgba(103, 78, 180, 0.18),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 25% 70%,
+      rgba(65, 45, 130, 0.12),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 55% 100%,
+      rgba(235, 170, 50, 0.08),
+      transparent 45%
+    ),
+    #08091a;
+
+  color: white;
+
+  box-shadow:
+    inset 0 0 100px rgba(80, 60, 160, 0.08),
+    0 0 35px rgba(130, 100, 220, 0.08);
+}
+
+
+/* =========================================================
+   GOLD GLOW
+========================================================= */
+
+.goldGlow {
+  position: absolute;
+
+  width: 550px;
+  height: 550px;
+
+  right: 18%;
+  top: -220px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 190, 70, 0.10);
+
+  filter: blur(110px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   PURPLE GLOW
+========================================================= */
+
+.purpleGlow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: 35%;
+  bottom: -250px;
+
+  border-radius: 50%;
+
+  background: rgba(110, 70, 220, 0.13);
+
+  filter: blur(110px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.left {
+  position: relative;
+
+  width: 53%;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 17px;
+
+  border: 1px solid rgba(150, 120, 230, 0.30);
+
+  border-radius: 10px;
+
+  background: rgba(95, 65, 170, 0.12);
+
+  color: #ddd0ff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  box-shadow:
+    0 0 18px rgba(120, 80, 220, 0.08);
+}
+
+
+/* =========================================================
+   BADGE ICON
+========================================================= */
+
+.badgeIcon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(180, 150, 255, 0.45);
+
+  border-radius: 8px;
+
+  color: #f0c95c;
+
+  background: rgba(120, 80, 220, 0.10);
+
+  box-shadow:
+    0 0 12px rgba(130, 90, 230, 0.15);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.heading {
+  margin: 35px 0 18px;
+
+  font-size: clamp(48px, 5vw, 70px);
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+
+  font-weight: 700;
+
+  color: #f5f5f7;
+}
+
+
+.heading span {
+  color: #d9bd68;
+
+  text-shadow:
+    0 0 20px rgba(230, 190, 80, 0.12);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+  margin: 0 0 32px;
+
+  color: #aeb0c1;
+
+  font-size: 19px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+
+  margin-bottom: 30px;
+
+  max-width: 650px;
+}
+
+
+/* =========================================================
+   FEATURE
+========================================================= */
+
+.feature {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.featureIcon {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #e9c75e;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(100, 70, 170, 0.25),
+      rgba(55, 35, 100, 0.20)
+    );
+
+  border: 1px solid rgba(160, 125, 240, 0.30);
+
+  box-shadow:
+    0 0 18px rgba(110, 75, 210, 0.15),
+    inset 0 0 15px rgba(255, 190, 70, 0.05);
+}
+
+
+/* =========================================================
+   FEATURE TITLE
+========================================================= */
+
+.feature h3 {
+  margin: 2px 0 5px;
+
+  font-size: 16px;
+
+  color: #f2f2f4;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   FEATURE DESCRIPTION
+========================================================= */
+
+.feature p {
+  margin: 0;
+
+  color: #9294a8;
+
+  font-size: 14px;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   FOLLOW BUTTON
+========================================================= */
+
+.followButton {
+  height: 68px;
+
+  min-width: 330px;
+
+  padding: 0 28px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f5d477,
+      #c99535
+    );
+
+  color: #111;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 30px rgba(225, 175, 60, 0.22),
+    0 0 25px rgba(225, 175, 60, 0.10);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.followButton:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 35px rgba(225, 175, 60, 0.35),
+    0 0 35px rgba(225, 175, 60, 0.18);
+}
+
+
+.followButton:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   RIGHT SIDE ARTWORK CONTAINER
+========================================================= */
+
+.visual {
+  position: absolute;
+
+  top: 0;
+
+  /*
+     IMPORTANT:
+     Move artwork INSIDE the banner.
+     Do not use right: 0 here.
+  */
+
+  right: 25px;
+
+  width: 53%;
+
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   FOLLOW PAGE ARTWORK
+========================================================= */
+
+.followImage {
+  position: absolute;
+
+  /*
+     Bigger artwork
+  */
+
+  width: 112%;
+
+  height: 112%;
+
+  /*
+     Move artwork toward the CENTER
+  */
+
+  top: -4%;
+
+  right: 1%;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  display: block;
+
+  background: transparent;
+
+  /*
+     IMPORTANT:
+     Keep PNG transparent.
+  */
+
+  mix-blend-mode: normal;
+
+  /*
+     Gold glow
+  */
+
+  filter:
+    drop-shadow(
+      0 0 15px rgba(255, 190, 50, 0.30)
+    )
+    drop-shadow(
+      0 0 30px rgba(255, 180, 50, 0.18)
+    )
+    drop-shadow(
+      0 0 45px rgba(120, 70, 220, 0.12)
+    );
+
+  z-index: 6;
+}
+
+
+/* =========================================================
+   GOLD GLOW BEHIND IMAGE
+========================================================= */
+
+.visual::before {
+  content: "";
+
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  right: 15%;
+  top: 18%;
+
+  border-radius: 50%;
+
+  background: rgba(255, 190, 50, 0.09);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   PURPLE GLOW BEHIND IMAGE
+========================================================= */
+
+.visual::after {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  right: 25%;
+  bottom: 5%;
+
+  border-radius: 50%;
+
+  background: rgba(120, 70, 230, 0.10);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA BUTTONS
+========================================================= */
+
+.socialButton {
+  position: absolute;
+
+  width: 68px;
+  height: 68px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 16px;
+
+  font-size: 32px;
+
+  color: white;
+
+  cursor: pointer;
+
+  pointer-events: auto;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.30);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.socialButton:hover {
+  transform:
+    translateY(-6px)
+    scale(1.05);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.40),
+    0 0 25px rgba(255, 200, 80, 0.15);
+}
+
+
+/* =========================================================
+   INSTAGRAM
+========================================================= */
+
+.instagram {
+  top: 110px;
+
+  left: 20%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7b35c9,
+      #e94b76,
+      #f4b83f
+    );
+
+  box-shadow:
+    0 0 25px rgba(220, 70, 150, 0.22);
+}
+
+
+/* =========================================================
+   FACEBOOK
+========================================================= */
+
+.facebook {
+  top: 245px;
+
+  left: 10%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #4267b2,
+      #294c91
+    );
+
+  font-family: Arial, sans-serif;
+
+  font-weight: 700;
+
+  font-size: 42px;
+
+  box-shadow:
+    0 0 25px rgba(60, 110, 220, 0.20);
+}
+
+
+/* =========================================================
+   YOUTUBE
+========================================================= */
+
+.youtube {
+  top: 125px;
+
+  right: 8%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ff3d3d,
+      #c80000
+    );
+
+  font-size: 27px;
+
+  box-shadow:
+    0 0 25px rgba(255, 50, 50, 0.20);
+}
+
+
+/* =========================================================
+   X
+========================================================= */
+
+.x {
+  top: 260px;
+
+  right: 13%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #222222,
+      #080808
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  font-size: 32px;
+}
+
+
+/* =========================================================
+   LINKEDIN
+========================================================= */
+
+.linkedin {
+  top: 390px;
+
+  left: 15%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #2485c7,
+      #12639a
+    );
+
+  font-family: Arial, sans-serif;
+
+  font-weight: 700;
+
+  font-size: 27px;
+
+  box-shadow:
+    0 0 25px rgba(40, 130, 200, 0.20);
+}
+
+
+/* =========================================================
+   TELEGRAM
+========================================================= */
+
+.telegram {
+  top: 395px;
+
+  right: 10%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #45b9f0,
+      #168bd0
+    );
+
+  font-size: 30px;
+
+  box-shadow:
+    0 0 25px rgba(50, 170, 230, 0.20);
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .banner {
+    min-height: 850px;
+
+    padding: 40px 30px;
+
+    /* KEEP SPACE */
+    margin-top: 35px;
+  }
+
+
+  .left {
+    width: 55%;
+  }
+
+
+  .heading {
+    font-size: 54px;
+  }
+
+
+  .description {
+    font-size: 17px;
+  }
+
+
+  .visual {
+    width: 50%;
+
+    right: 15px;
+  }
+
+
+  .followImage {
+    width: 115%;
+    height: 105%;
+
+    top: 0;
+
+    right: 0;
+  }
+
+
+  .socialButton {
+    width: 58px;
+    height: 58px;
+
+    font-size: 26px;
+  }
+
+
+  .features {
+    gap: 14px;
+  }
+
+
+  .featureIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+
+  .feature h3 {
+    font-size: 14px;
+  }
+
+
+  .feature p {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .banner {
+    min-height: 1050px;
+
+    padding: 30px 20px;
+
+    /* KEEP SPACE */
+    margin-top: 35px;
+  }
+
+
+  .left {
+    width: 100%;
+  }
+
+
+  .heading {
+    margin-top: 25px;
+
+    font-size: 46px;
+  }
+
+
+  .description {
+    font-size: 16px;
+  }
+
+
+  .description br {
+    display: none;
+  }
+
+
+  .features {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+
+    max-width: 100%;
+
+    margin-bottom: 25px;
+  }
+
+
+  .feature {
+    align-items: center;
+  }
+
+
+  .feature h3 {
+    font-size: 16px;
+  }
+
+
+  .feature p {
+    font-size: 13px;
+  }
+
+
+  .followButton {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE ARTWORK
+  ----------------------------------------- */
+
+  .visual {
+    position: absolute;
+
+    top: 610px;
+
+    right: 0;
+
+    width: 100%;
+
+    height: 400px;
+
+    display: flex;
+
+    justify-content: center;
+  }
+
+
+  .followImage {
+    width: 110%;
+
+    height: 105%;
+
+    top: -2%;
+
+    right: 0;
+
+    object-fit: contain;
+  }
+
+
+  .instagram {
+    top: 20px;
+    left: 15%;
+  }
+
+
+  .facebook {
+    top: 100px;
+    left: 5%;
+  }
+
+
+  .youtube {
+    top: 25px;
+    right: 12%;
+  }
+
+
+  .x {
+    top: 110px;
+    right: 5%;
+  }
+
+
+  .linkedin {
+    top: 190px;
+    left: 15%;
+  }
+
+
+  .telegram {
+    top: 200px;
+    right: 12%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+
+  .banner {
+    min-height: 1000px;
+
+    padding: 25px 15px;
+
+    /* KEEP SPACE */
+    margin-top: 35px;
+  }
+
+
+  .heading {
+    font-size: 40px;
+  }
+
+
+  .socialButton {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 13px;
+
+    font-size: 23px;
+  }
+
+
+  .facebook {
+    font-size: 32px;
+  }
+
+
+  .linkedin {
+    font-size: 22px;
+  }
+
+
+  .followButton {
+    height: 60px;
+
+    font-size: 18px;
+  }
+
+
+  .followImage {
+    width: 115%;
+
+    height: 105%;
+
+    right: -2%;
+  }
+}

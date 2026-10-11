@@ -1,0 +1,123 @@
+.game-page {
+  min-height: calc(100vh - 80px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(240, 190, 40, 0.08),
+      transparent 40%
+    ),
+    #11121d;
+
+  padding: 40px;
+}
+
+.game-card {
+  width: 420px;
+
+  padding: 45px;
+
+  text-align: center;
+
+  border: 1px solid rgba(240, 190, 40, 0.3);
+
+  border-radius: 24px;
+
+  background: rgba(20, 21, 31, 0.95);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.game-icon {
+  font-size: 65px;
+
+  margin-bottom: 15px;
+}
+
+.game-card h1 {
+  margin: 0;
+
+  font-size: 32px;
+
+  color: white;
+}
+
+.game-card p {
+  color: #999;
+
+  margin: 12px 0 30px;
+}
+
+.game-score {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  margin-bottom: 30px;
+}
+
+.game-score span {
+  color: #aaa;
+
+  font-size: 14px;
+
+  text-transform: uppercase;
+}
+
+.game-score strong {
+  font-size: 42px;
+
+  color: #f2c94c;
+}
+
+.play-button {
+  width: 100%;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #f7d35c,
+    #d9a928
+  );
+
+  color: #111;
+
+  font-size: 17px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.play-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 25px rgba(240, 190, 40, 0.25);
+}
+
+.game-message {
+  margin-top: 20px;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  background: rgba(240, 190, 40, 0.1);
+
+  color: #f2c94c;
+}

@@ -1,0 +1,915 @@
+.dashboard-page {
+  max-width: 1350px;
+
+  width: calc(100% - 60px);
+
+  margin: auto;
+
+  padding: 70px 0 120px;
+}
+
+/* HEADER */
+
+.dashboard-heading {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.dashboard-heading > div:first-child > span {
+  color: var(--gold);
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  font-weight: 800;
+}
+
+.dashboard-heading h1 {
+  margin-top: 12px;
+
+  font-family: "Outfit";
+
+  font-size: clamp(38px, 5vw, 55px);
+
+  letter-spacing: -2px;
+}
+
+.dashboard-heading h1 em {
+  color: var(--gold);
+
+  font-style: normal;
+}
+
+.dashboard-heading p {
+  margin-top: 10px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+.streak-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 18px;
+
+  border-radius: 15px;
+
+  border: 1px solid rgba(244,198,91,0.15);
+
+  background:
+    rgba(244,198,91,0.045);
+}
+
+.streak-box > span {
+  font-size: 24px;
+}
+
+.streak-box div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.streak-box small {
+  color: #75798a;
+
+  font-size: 7px;
+
+  letter-spacing: 1px;
+}
+
+.streak-box strong {
+  color: var(--gold);
+
+  font-size: 13px;
+}
+
+/* BALANCE */
+
+.balance-grid {
+  margin-top: 45px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+}
+
+.balance-card {
+  position: relative;
+
+  padding: 25px;
+
+  min-height: 170px;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(255,255,255,0.06);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(35,37,55,0.85),
+      rgba(25,26,41,0.85)
+    );
+
+  overflow: hidden;
+
+  transition: 0.3s ease;
+}
+
+.balance-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(244,198,91,0.18);
+
+  box-shadow:
+    var(--gold-glow);
+}
+
+.balance-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  right: -50px;
+  bottom: -70px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(244,198,91,0.07);
+
+  filter: blur(20px);
+}
+
+.balance-card-icon {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  color: var(--gold);
+
+  background:
+    rgba(244,198,91,0.08);
+
+  border: 1px solid rgba(244,198,91,0.12);
+}
+
+.balance-card > span {
+  display: block;
+
+  margin-top: 22px;
+
+  color: #7e8293;
+
+  font-size: 8px;
+
+  letter-spacing: 1.3px;
+}
+
+.balance-card > strong {
+  display: block;
+
+  margin-top: 5px;
+
+  font-family: "Outfit";
+
+  font-size: 29px;
+}
+
+.balance-card > small {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #5f6374;
+
+  font-size: 9px;
+}
+
+.gold-card {
+  border-color:
+    rgba(244,198,91,0.2);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(77,61,27,0.28),
+      rgba(29,30,45,0.9)
+    );
+}
+
+/* SECTION */
+
+.reward-section {
+  margin-top: 80px;
+}
+
+.section-title {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+}
+
+.section-title > div > span {
+  color: var(--gold);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.section-title h2 {
+  margin-top: 8px;
+
+  font-family: "Outfit";
+
+  font-size: 34px;
+
+  letter-spacing: -1px;
+}
+
+.section-title h2 em {
+  color: var(--gold);
+
+  font-style: normal;
+}
+
+.section-note {
+  color: #666a7a;
+
+  font-size: 9px;
+}
+
+/* BANNER */
+
+.reward-banner {
+  position: relative;
+
+  min-height: 330px;
+
+  margin-top: 18px;
+
+  padding: 45px;
+
+  display: grid;
+
+  grid-template-columns: 0.8fr 1.2fr;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  border-radius: 25px;
+
+  border: 1px solid rgba(244,198,91,0.10);
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(32,34,51,0.96),
+      rgba(22,23,37,0.96)
+    );
+
+  transition: 0.4s ease;
+}
+
+.reward-banner:hover {
+  border-color:
+    rgba(244,198,91,0.22);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.3),
+    0 0 40px rgba(244,198,91,0.05);
+}
+
+.reward-banner::before {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  left: -180px;
+  top: -150px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(244,198,91,0.045);
+
+  filter: blur(60px);
+}
+
+.banner-number {
+  position: absolute;
+
+  left: 28px;
+  top: 25px;
+
+  color: #555968;
+
+  font-family: "Outfit";
+
+  font-size: 10px;
+}
+
+.banner-visual {
+  position: relative;
+
+  z-index: 2;
+
+  width: 220px;
+  height: 220px;
+
+  margin: auto;
+
+  display: grid;
+
+  place-items: center;
+
+  font-size: 85px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(244,198,91,0.10),
+      transparent 68%
+    );
+
+  box-shadow:
+    inset 0 0 50px rgba(244,198,91,0.03);
+}
+
+.banner-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 560px;
+}
+
+.banner-tag {
+  color: var(--gold);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.banner-tag.blue {
+  color: #5e9dff;
+}
+
+.banner-tag.purple {
+  color: #ae82ff;
+}
+
+.banner-tag.green {
+  color: #54d69b;
+}
+
+.banner-tag.orange {
+  color: #ffb53e;
+}
+
+.banner-content h3 {
+  margin-top: 13px;
+
+  font-family: "Outfit";
+
+  font-size: 40px;
+
+  line-height: 1.05;
+
+  letter-spacing: -1.5px;
+}
+
+.banner-content h3 strong {
+  color: var(--gold);
+
+  font-weight: 700;
+}
+
+.banner-content p {
+  max-width: 500px;
+
+  margin-top: 14px;
+
+  color: #85899a;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+.banner-content button {
+  margin-top: 22px;
+
+  height: 44px;
+
+  padding: 0 17px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  border-radius: 11px;
+
+  border: 1px solid rgba(244,198,91,0.25);
+
+  background:
+    rgba(244,198,91,0.07);
+
+  color: var(--gold-light);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.banner-content button:hover {
+  background:
+    rgba(244,198,91,0.13);
+
+  border-color:
+    rgba(244,198,91,0.45);
+
+  box-shadow:
+    0 0 20px rgba(244,198,91,0.08);
+
+  transform: translateY(-2px);
+}
+
+.banner-content button:disabled {
+  cursor: default;
+
+  color: #77d6a1;
+
+  border-color: rgba(119,214,161,0.25);
+
+  background: rgba(119,214,161,0.05);
+}
+
+.reward-preview {
+  position: absolute;
+
+  right: 35px;
+  top: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 12px 15px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(255,255,255,0.025);
+
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.reward-preview small {
+  color: #666a7b;
+
+  font-size: 7px;
+}
+
+.reward-preview strong {
+  margin-top: 3px;
+
+  color: #6ea8ff;
+
+  font-size: 14px;
+}
+
+.daily-reward {
+  position: absolute;
+
+  right: 40px;
+  bottom: 35px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  padding: 16px 22px;
+
+  border-radius: 15px;
+
+  border: 1px solid rgba(244,198,91,0.15);
+
+  background:
+    rgba(244,198,91,0.045);
+}
+
+.daily-reward small {
+  color: #777b8b;
+
+  font-size: 7px;
+
+  letter-spacing: 1px;
+}
+
+.daily-reward strong {
+  margin-top: 3px;
+
+  font-family: "Outfit";
+
+  font-size: 28px;
+
+  color: var(--gold);
+}
+
+.daily-reward span {
+  color: #888c9c;
+
+  font-size: 8px;
+}
+
+/* SPECIAL BANNERS */
+
+.ad-banner {
+  background:
+    linear-gradient(
+      120deg,
+      rgba(28,39,65,0.95),
+      rgba(21,25,42,0.95)
+    );
+}
+
+.contact-banner {
+  background:
+    linear-gradient(
+      120deg,
+      rgba(43,34,59,0.9),
+      rgba(24,23,40,0.95)
+    );
+}
+
+.follow-banner {
+  background:
+    linear-gradient(
+      120deg,
+      rgba(25,47,42,0.7),
+      rgba(21,29,38,0.95)
+    );
+}
+
+.bonus-banner {
+  background:
+    linear-gradient(
+      120deg,
+      rgba(53,43,25,0.65),
+      rgba(28,27,36,0.95)
+    );
+}
+
+.ad-visual {
+  color: #5e9dff;
+
+  box-shadow:
+    0 0 60px rgba(94,157,255,0.08);
+}
+
+.contact-visual {
+  color: #ae82ff;
+}
+
+.phone-visual {
+  color: #54d69b;
+}
+
+.chest-visual {
+  color: #ffb53e;
+
+  text-shadow:
+    0 0 30px rgba(255,181,62,0.3);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+  .dashboard-page {
+    width: calc(100% - 30px);
+  }
+
+  .dashboard-heading {
+    align-items: flex-start;
+
+    gap: 20px;
+
+    flex-direction: column;
+  }
+
+  .balance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reward-banner {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+
+    padding: 40px 25px;
+  }
+
+  .banner-visual {
+    width: 160px;
+    height: 160px;
+
+    font-size: 60px;
+
+    margin-bottom: 25px;
+  }
+
+  .banner-content {
+    margin: auto;
+  }
+
+  .banner-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .daily-reward,
+  .reward-preview {
+    position: static;
+
+    width: max-content;
+
+    margin: 20px auto 0;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .dashboard-page {
+    padding-top: 45px;
+  }
+
+  .section-title {
+    align-items: flex-start;
+
+    gap: 10px;
+
+    flex-direction: column;
+  }
+
+  .banner-content h3 {
+    font-size: 31px;
+  }
+/* =====================================================
+   INTERNSHIP APPLICATION STATUS
+===================================================== */
+
+.internship-status-section {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+.internship-status-section .section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 25px;
+}
+
+
+.internship-status-section .section-title button {
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 196, 61, 0.35);
+  border-radius: 8px;
+  background: transparent;
+  color: #f5c451;
+  cursor: pointer;
+}
+
+
+.internship-status-section .section-title button:hover {
+  background: rgba(245, 196, 81, 0.08);
+}
+
+
+/* =====================================================
+   APPLICATION CARD
+===================================================== */
+
+.user-application-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+.user-application-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+.user-application-info span {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #d7a936;
+}
+
+
+.user-application-info h3 {
+  margin: 8px 0 5px;
+  font-size: 20px;
+}
+
+
+.user-application-info p {
+  margin: 0 0 5px;
+  color: #ffffff;
+}
+
+
+.user-application-info small {
+  color: #777d91;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.user-application-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+
+.user-status-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* PENDING */
+
+.user-status-badge.pending {
+  color: #f5c451;
+  background: rgba(245, 196, 81, 0.12);
+}
+
+
+/* UNDER REVIEW */
+
+.user-status-badge.under-review {
+  color: #6da7ff;
+  background: rgba(73, 126, 255, 0.12);
+}
+
+
+/* ACCEPTED */
+
+.user-status-badge.accepted {
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.12);
+}
+
+
+/* REJECTED */
+
+.user-status-badge.rejected {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.12);
+}
+
+
+.user-application-status small {
+  color: #73798c;
+}
+
+
+/* =====================================================
+   LOADING / ERROR / EMPTY
+===================================================== */
+
+.internship-status-message {
+  padding: 25px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.03);
+
+  color: #b5bac8;
+}
+
+
+.internship-status-message.error {
+  color: #ff7777;
+}
+
+
+.internship-status-empty {
+  text-align: center;
+  padding: 40px 20px;
+
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+}
+
+
+.internship-status-empty > div {
+  font-size: 30px;
+  color: #d7a936;
+}
+
+
+.internship-status-empty h3 {
+  margin: 12px 0 8px;
+}
+
+
+.internship-status-empty p {
+  margin: 0;
+  color: #777d91;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .user-application-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+
+  .user-application-status {
+    align-items: flex-start;
+  }
+
+
+  .internship-status-section .section-title {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+}
+
+}

@@ -1,0 +1,959 @@
+/* =========================================================
+   DAILY BONUS BANNER
+========================================================= */
+
+.banner {
+  position: relative;
+
+  width: 100%;
+  min-height: 650px;
+
+  /* SPACE BETWEEN PREVIOUS BANNER AND THIS BANNER */
+  margin-top: 35px;
+
+  padding: 45px 50px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(235, 184, 68, 0.55);
+  border-radius: 24px;
+
+  background:
+    radial-gradient(
+      circle at 75% 30%,
+      rgba(235, 184, 68, 0.14),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(45, 90, 200, 0.10),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #07101d,
+      #0a172a,
+      #07101d
+    );
+
+  color: white;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+========================================================= */
+
+.goldGlow {
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  top: -180px;
+  right: 20%;
+
+  border-radius: 50%;
+
+  background: rgba(255, 190, 50, 0.10);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+.blueGlow {
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  left: -180px;
+  bottom: -180px;
+
+  border-radius: 50%;
+
+  background: rgba(40, 90, 220, 0.10);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.left {
+  position: relative;
+
+  width: 48%;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 9px 16px;
+
+  border: 1px solid rgba(235, 184, 68, 0.45);
+
+  border-radius: 20px;
+
+  background: rgba(235, 184, 68, 0.06);
+
+  color: #e9c45b;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+.badgeIcon {
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e6b83e;
+
+  border-radius: 50%;
+
+  color: #f0bf45;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.heading {
+  margin: 30px 0 15px;
+
+  font-size: clamp(45px, 5vw, 68px);
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+
+  font-weight: 700;
+
+  color: #f5f5f5;
+}
+
+
+.heading span {
+  color: #e9b936;
+
+  text-shadow:
+    0 0 20px rgba(233, 185, 54, 0.15);
+}
+
+
+.sparkle {
+  display: inline-block;
+
+  margin-left: 8px;
+
+  color: #e9b936;
+
+  vertical-align: middle;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.description {
+  margin: 0 0 22px;
+
+  color: #aeb8ca;
+
+  font-size: 17px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   BONUS CARD
+========================================================= */
+
+.bonusCard {
+  position: relative;
+
+  width: 440px;
+  height: 215px;
+
+  box-sizing: border-box;
+
+  padding: 20px;
+
+  border: 1px solid rgba(235, 184, 68, 0.38);
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(20, 32, 55, 0.96),
+      rgba(8, 15, 28, 0.96)
+    );
+
+  box-shadow:
+    0 0 25px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   DIAMOND
+========================================================= */
+
+.diamondContainer {
+  position: absolute;
+
+  left: 18px;
+  top: 28px;
+
+  width: 135px;
+  height: 135px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+.diamondImage {
+  width: 105px;
+  height: 105px;
+
+  object-fit: contain;
+
+  display: block;
+
+  background: transparent;
+
+  filter:
+    drop-shadow(
+      0 0 18px
+      rgba(80, 120, 255, 0.45)
+    );
+}
+
+
+/* =========================================================
+   BONUS INFORMATION
+========================================================= */
+
+.bonusInfo {
+  position: absolute;
+
+  left: 175px;
+  top: 30px;
+}
+
+
+.bonusTitle {
+  margin-bottom: 7px;
+
+  color: #e9c45b;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+.bonusAmount {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 7px;
+}
+
+
+.plus {
+  color: #f5f7ff;
+
+  font-size: 48px;
+
+  font-weight: 700;
+}
+
+
+.gems {
+  color: #e9b936;
+
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   AVAILABLE
+========================================================= */
+
+.available {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 8px;
+
+  padding: 5px 10px;
+
+  border: 1px solid rgba(60, 190, 120, 0.35);
+
+  border-radius: 14px;
+
+  color: #67d495;
+
+  background: rgba(40, 160, 90, 0.08);
+
+  font-size: 12px;
+}
+
+
+.availableDot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #43c978;
+
+  box-shadow:
+    0 0 7px rgba(67, 201, 120, 0.7);
+}
+
+
+/* =========================================================
+   CLAIM BUTTON
+========================================================= */
+
+.claimButton {
+  position: absolute;
+
+  left: 20px;
+  right: 20px;
+  bottom: 16px;
+
+  height: 52px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffd45f,
+      #e5a62f
+    );
+
+  color: #111;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 20px rgba(235, 174, 45, 0.22);
+
+  transition: 0.2s ease;
+}
+
+
+.claimButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(235, 174, 45, 0.35);
+}
+
+
+.claimButton:disabled {
+  cursor: default;
+
+  opacity: 0.65;
+}
+
+
+/* =========================================================
+   RIGHT IMAGE
+========================================================= */
+
+.visual {
+  position: absolute;
+
+  top: 15px;
+  right: 10px;
+
+  width: 55%;
+  height: 400px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: transparent;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+.dailyImage {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  display: block;
+
+  background: transparent;
+
+  filter:
+    drop-shadow(
+      0 0 25px
+      rgba(235, 184, 68, 0.15)
+    );
+}
+
+
+/* =========================================================
+   STREAK CARD
+========================================================= */
+
+.streakCard {
+  position: absolute;
+
+  right: 18px;
+  bottom: 18px;
+
+  width: 55%;
+  min-height: 145px;
+
+  padding: 18px 22px;
+
+  box-sizing: border-box;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(235, 184, 68, 0.65);
+
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(45, 105, 220, 0.20),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(235, 184, 68, 0.12),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #13294b 0%,
+      #0d1d36 50%,
+      #101c31 100%
+    );
+
+  z-index: 30;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.45),
+    0 0 18px rgba(55, 120, 255, 0.18),
+    0 0 30px rgba(235, 184, 68, 0.12),
+    inset 0 0 25px rgba(55, 120, 255, 0.08);
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   STREAK CARD HOVER
+========================================================= */
+
+.streakCard:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 16px 35px rgba(0, 0, 0, 0.50),
+    0 0 25px rgba(55, 120, 255, 0.25),
+    0 0 40px rgba(235, 184, 68, 0.18),
+    inset 0 0 30px rgba(55, 120, 255, 0.10);
+}
+
+
+/* =========================================================
+   STREAK HEADER
+========================================================= */
+
+.streakHeader {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 12px;
+}
+
+
+.streakTitle {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #e9b936;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+.keepText {
+  color: #9da8bb;
+
+  font-size: 12px;
+}
+
+
+.divider {
+  width: 100%;
+  height: 1px;
+
+  margin-bottom: 12px;
+
+  background: rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================================================
+   DAYS
+========================================================= */
+
+.days {
+  display: flex;
+
+  align-items: flex-start;
+
+  width: 100%;
+}
+
+
+.dayItem {
+  flex: 1;
+
+  min-width: 45px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+
+.dayCircle {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(140, 150, 175, 0.30);
+
+  border-radius: 50%;
+
+  background: rgba(10, 20, 35, 0.8);
+
+  color: #667186;
+}
+
+
+/* =========================================================
+   COMPLETED
+========================================================= */
+
+.completed .dayCircle {
+  border-color: #e7b43c;
+
+  color: #e7b43c;
+
+  box-shadow:
+    0 0 8px rgba(231, 180, 60, 0.12);
+}
+
+
+/* =========================================================
+   ACTIVE GIFT
+========================================================= */
+
+.active .dayCircle {
+  width: 52px;
+  height: 52px;
+
+  margin-top: -4px;
+
+  border: 2px solid #f4c64d;
+
+  color: #f4c64d;
+
+  box-shadow:
+    0 0 12px rgba(244, 198, 77, 0.45),
+    0 0 25px rgba(244, 198, 77, 0.18);
+}
+
+
+.giftIcon {
+  filter:
+    drop-shadow(
+      0 0 8px
+      rgba(255, 200, 70, 0.7)
+    );
+}
+
+
+/* =========================================================
+   DAY 7
+========================================================= */
+
+.daySeven .dayCircle {
+  border-color: #7377e8;
+
+  color: #7377e8;
+}
+
+
+.smallDiamond {
+  color: #6876ff;
+
+  font-size: 21px;
+
+  text-shadow:
+    0 0 10px rgba(90, 110, 255, 0.7);
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.dayLabel {
+  color: #8994a8;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+}
+
+
+.active .dayLabel {
+  color: #f0c34d;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CONNECTOR
+========================================================= */
+
+.connector {
+  flex: 1;
+
+  height: 2px;
+
+  margin-top: 21px;
+
+  background:
+    repeating-linear-gradient(
+      to right,
+      rgba(100, 110, 130, 0.35) 0 5px,
+      transparent 5px 10px
+    );
+}
+
+
+.connectorCompleted {
+  background:
+    repeating-linear-gradient(
+      to right,
+      rgba(231, 180, 60, 0.65) 0 5px,
+      transparent 5px 10px
+    );
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .banner {
+    min-height: 720px;
+
+    padding: 40px 30px;
+
+    margin-top: 35px;
+  }
+
+
+  .left {
+    width: 50%;
+  }
+
+
+  .heading {
+    font-size: 52px;
+  }
+
+
+  .bonusCard {
+    width: 400px;
+  }
+
+
+  .visual {
+    width: 55%;
+
+    height: 380px;
+  }
+
+
+  .streakCard {
+    width: 55%;
+
+    right: 20px;
+
+    bottom: 20px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 750px) {
+
+  .banner {
+    min-height: auto;
+
+    padding: 35px 20px 30px;
+
+    margin-top: 30px;
+
+    overflow: hidden;
+  }
+
+
+  .left {
+    width: 100%;
+
+    text-align: center;
+  }
+
+
+  .heading {
+    font-size: 44px;
+
+    letter-spacing: -1px;
+  }
+
+
+  .description {
+    font-size: 16px;
+  }
+
+
+  .description br {
+    display: none;
+  }
+
+
+  .bonusCard {
+    width: 100%;
+
+    max-width: 440px;
+
+    margin: 0 auto;
+  }
+
+
+  /* IMAGE IS NOW NORMAL FLOW */
+
+  .visual {
+    position: relative;
+
+    top: auto;
+    right: auto;
+
+    width: 100%;
+
+    height: 330px;
+
+    margin-top: 25px;
+
+    display: flex;
+
+    justify-content: center;
+  }
+
+
+  .dailyImage {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+  }
+
+
+  /* STREAK IS ALSO NORMAL FLOW */
+
+  .streakCard {
+    position: relative;
+
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    overflow-x: auto;
+  }
+
+
+  .days {
+    min-width: 540px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .banner {
+    padding: 30px 15px;
+
+    margin-top: 25px;
+  }
+
+
+  .heading {
+    font-size: 38px;
+  }
+
+
+  .bonusCard {
+    height: 205px;
+  }
+
+
+  .diamondContainer {
+    left: 5px;
+
+    width: 115px;
+    height: 115px;
+  }
+
+
+  .diamondImage {
+    width: 115px;
+    height: 115px;
+  }
+
+
+  .bonusInfo {
+    left: 140px;
+
+    top: 25px;
+  }
+
+
+  .plus {
+    font-size: 40px;
+  }
+
+
+  .gems {
+    font-size: 17px;
+  }
+
+
+  .visual {
+    height: 300px;
+  }
+
+
+  .streakCard {
+    padding: 15px;
+  }
+}
