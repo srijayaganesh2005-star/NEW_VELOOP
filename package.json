@@ -2,22 +2,11 @@
   "name": "oveloop",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/srijayaganesh2005-star/NEW_VELOOP.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/srijayaganesh2005-star/NEW_VELOOP/issues"
-  },
-  "homepage": "https://github.com/srijayaganesh2005-star/NEW_VELOOP#readme",
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
