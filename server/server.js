@@ -1,3 +1,4 @@
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -6,7 +7,6 @@ require("dotenv").config();
 // =====================================================
 // ROUTES
 // =====================================================
-
 const adminRoutes = require("./routes/adminRoutes");
 const authRoutes = require("./routes/authRoutes");
 const gameRoutes = require("./routes/gameRoutes");
@@ -14,344 +14,213 @@ const leaderboardRoute = require("./routes/leaderboardRoute");
 const internshipRoutes = require("./routes/internshipRoutes");
 
 // =====================================================
-// APP
+// APP CONFIGURATION
 // =====================================================
-
 const app = express();
-
-// =====================================================
-// MIDDLEWARE
-// =====================================================
+const PORT = Number(process.env.PORT) || 5000;
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
     credentials: true,
   })
 );
 
 app.use(express.json());
-
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-);
+app.use(express.urlencoded({ extended: true }));
 
 // =====================================================
-// SERVER INFORMATION
+// ENVIRONMENT VALIDATION
 // =====================================================
-
 console.log("=================================");
 console.log("VELOOP REWARDS SERVER");
 console.log("=================================");
-
+console.log("MongoDB URI configured:", Boolean(process.env.MONGO_URI));
+console.log("JWT secret configured:", Boolean(process.env.JWT_SECRET));
+console.log("Admin email configured:", Boolean(process.env.ADMIN_EMAIL));
+console.log("Admin password configured:", Boolean(process.env.ADMIN_PASSWORD));
 console.log(
-  "MONGO_URI:",
-  process.env.MONGO_URI
+  "Email configured:",
+  Boolean(process.env.EMAIL_USER && process.env.EMAIL_PASS)
 );
-
-console.log(
-  "JWT_SECRET EXISTS:",
-  !!process.env.JWT_SECRET
-);
-
-console.log(
-  "ADMIN_EMAIL:",
-  process.env.ADMIN_EMAIL
-    ? process.env.ADMIN_EMAIL
-    : "NOT SET"
-);
-
-console.log(
-  "ADMIN_PASSWORD EXISTS:",
-  !!process.env.ADMIN_PASSWORD
-);
-
-console.log(
-  "PORT:",
-  process.env.PORT || 5000
-);
-
+console.log("Port:", PORT);
 console.log("=================================");
-
-// =====================================================
-// MONGODB CONNECTION
-// =====================================================
-
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(async () => {
-    console.log("=================================");
-    console.log("MongoDB connected successfully");
-    console.log("=================================");
-
-    console.log(
-      "Mongo Host:",
-      mongoose.connection.host
-    );
-
-    console.log(
-      "Mongo Port:",
-      mongoose.connection.port
-    );
-
-    console.log(
-      "Mongo Database:",
-      mongoose.connection.name
-    );
-
-    try {
-      const collections =
-        await mongoose.connection.db
-          .listCollections()
-          .toArray();
-
-      console.log(
-        "MongoDB Collections:",
-        collections.map(
-          (collection) =>
-            collection.name
-        )
-      );
-    } catch (error) {
-      console.error(
-        "Could not list MongoDB collections:",
-        error.message
-      );
-    }
-
-    console.log("=================================");
-  })
-  .catch((error) => {
-    console.error("=================================");
-    console.error("MONGODB CONNECTION ERROR");
-    console.error("=================================");
-
-    console.error(error.message);
-
-    process.exit(1);
-  });
 
 // =====================================================
 // API ROUTES
 // =====================================================
-
-// -----------------------------------------------------
-// ADMIN
-// -----------------------------------------------------
-
-app.use(
-  "/api/admin",
-  adminRoutes
-);
-
-// -----------------------------------------------------
-// AUTHENTICATION
-// -----------------------------------------------------
-
-app.use(
-  "/api/auth",
-  authRoutes
-);
-
-// -----------------------------------------------------
-// GAME
-// IMPORTANT:
-// gameRoutes.js handles:
-// /api/game/lucky-tap/reward
-// /api/game/spin
-// etc.
-// -----------------------------------------------------
-
-app.use(
-  "/api/game",
-  gameRoutes
-);
-
-// -----------------------------------------------------
-// LEADERBOARD
-// -----------------------------------------------------
-
-app.use(
-  "/api/leaderboard",
-  leaderboardRoute
-);
-
-// -----------------------------------------------------
-// INTERNSHIPS
-// -----------------------------------------------------
-
-app.use(
-  "/api/internships",
-  internshipRoutes
-);
+app.use("/api/admin", adminRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/game", gameRoutes);
+app.use("/api/leaderboard", leaderboardRoute);
+app.use("/api/internships", internshipRoutes);
 
 // =====================================================
-// GAME API TEST
+// ROOT ROUTE
 // =====================================================
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "VELOOP Rewards API is running",
+    database:
+      mongoose.connection.readyState === 1
+        ? "connected"
+        : "disconnected",
+  });
+});
 
-app.get(
-  "/api/game/test",
-  (req, res) => {
-    res.status(200).json({
-      success: true,
-      message: "Game API is working successfully",
+// =====================================================
+// HEALTH CHECK
+// =====================================================
+app.get("/api/health", (req, res) => {
+  const databaseConnected = mongoose.connection.readyState === 1;
+
+  res.status(databaseConnected ? 200 : 503).json({
+    success: databaseConnected,
+    server: "running",
+    database: databaseConnected ? "connected" : "disconnected",
+    emailConfigured: Boolean(
+      process.env.EMAIL_USER && process.env.EMAIL_PASS
+    ),
+  });
+});
+
+// =====================================================
+// API TEST ROUTES
+// =====================================================
+app.get("/api/game/test", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Game API is working successfully",
+  });
+});
+
+app.get("/api/admin/test", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Admin API is working successfully",
+  });
+});
+
+app.get("/api/internships/test", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Internship API is working successfully",
+  });
+});
+
+// =====================================================
+// 404 HANDLER
+// =====================================================
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: "API route not found",
+    path: req.originalUrl,
+  });
+});
+
+// =====================================================
+// GLOBAL ERROR HANDLER
+// =====================================================
+app.use((err, req, res, next) => {
+  console.error("Request error:", err.message);
+
+  if (res.headersSent) {
+    return next(err);
+  }
+
+  res.status(500).json({
+    success: false,
+    message: "Internal server error",
+  });
+});
+
+// =====================================================
+// DATABASE CONNECTION AND SERVER STARTUP
+// =====================================================
+async function startServer() {
+  try {
+    if (!process.env.MONGO_URI) {
+      throw new Error("MONGO_URI is missing from the .env file");
+    }
+
+    if (
+      !process.env.JWT_SECRET ||
+      process.env.JWT_SECRET === "YOUR_LONG_RANDOM_SECRET"
+    ) {
+      throw new Error("Set a real, unique JWT_SECRET in the .env file");
+    }
+
+    console.log("Connecting to MongoDB...");
+
+    await mongoose.connect(process.env.MONGO_URI, {
+      serverSelectionTimeoutMS: 15000,
     });
-  }
-);
 
-// =====================================================
-// ROOT TEST
-// =====================================================
+    console.log("MongoDB connected successfully");
+    console.log("Database:", mongoose.connection.name);
 
-app.get(
-  "/",
-  (req, res) => {
-    res.status(200).json({
-      success: true,
-      message: "VELOOP Rewards API is running",
-      database: mongoose.connection.name,
+    app.listen(PORT, () => {
+      console.log("=================================");
+      console.log(`Server running at http://localhost:${PORT}`);
+      console.log(`Admin API: http://localhost:${PORT}/api/admin`);
+      console.log(`Game API: http://localhost:${PORT}/api/game`);
+      console.log(
+        `Leaderboard API: http://localhost:${PORT}/api/leaderboard`
+      );
+      console.log(
+        `Internship API: http://localhost:${PORT}/api/internships`
+      );
+      console.log("=================================");
+
+      if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+        console.warn(
+          "Email credentials are not configured. Email-sending routes must handle this case separately."
+        );
+      }
     });
+  } catch (error) {
+    console.error("=================================");
+    console.error("SERVER STARTUP FAILED");
+    console.error("=================================");
+
+    if (error.message.includes("bad auth")) {
+      console.error(
+        "MongoDB authentication failed. Check the database username and password in Atlas and .env."
+      );
+    } else if (
+      error.message.includes("querySrv") ||
+      error.message.includes("ECONNREFUSED")
+    ) {
+      console.error(
+        "MongoDB DNS/network error. Verify the cluster hostname, DNS and Atlas Network Access."
+      );
+    } else {
+      console.error(error.message);
+    }
+
+    process.exit(1);
   }
-);
+}
 
 // =====================================================
-// ADMIN TEST
+// GRACEFUL SHUTDOWN
 // =====================================================
+async function shutdown(signal) {
+  console.log(`${signal} received. Closing server...`);
 
-app.get(
-  "/api/admin/test",
-  (req, res) => {
-    res.status(200).json({
-      success: true,
-      message: "Admin API is working successfully",
-    });
+  try {
+    await mongoose.disconnect();
+    process.exit(0);
+  } catch (error) {
+    console.error("Shutdown error:", error.message);
+    process.exit(1);
   }
-);
+}
 
-// =====================================================
-// INTERNSHIP TEST
-// =====================================================
+process.on("SIGINT", () => shutdown("SIGINT"));
+process.on("SIGTERM", () => shutdown("SIGTERM"));
 
-app.get(
-  "/api/internships/test",
-  (req, res) => {
-    res.status(200).json({
-      success: true,
-      message:
-        "Internship API is working successfully",
-    });
-  }
-);
-
-// =====================================================
-// INTERNSHIP STATUS TEST
-// =====================================================
-
-app.get(
-  "/api/internships/my",
-  (req, res, next) => {
-    next();
-  }
-);
-
-// =====================================================
-// 404 ROUTE
-// IMPORTANT: KEEP THIS AT THE VERY END
-// =====================================================
-
-app.use(
-  (req, res) => {
-    res.status(404).json({
-      success: false,
-      message: "API route not found",
-      path: req.originalUrl,
-    });
-  }
-);
-
-// =====================================================
-// ERROR HANDLER
-// =====================================================
-
-app.use(
-  (
-    err,
-    req,
-    res,
-    next
-  ) => {
-    console.error(
-      "================================="
-    );
-
-    console.error(
-      "SERVER ERROR:"
-    );
-
-    console.error(err);
-
-    console.error(
-      "================================="
-    );
-
-    res.status(500).json({
-      success: false,
-      message: "Internal server error",
-      error: err.message,
-    });
-  }
-);
-
-// =====================================================
-// SERVER
-// =====================================================
-
-const PORT =
-  process.env.PORT || 5000;
-
-app.listen(
-  PORT,
-  () => {
-    console.log(
-      "================================="
-    );
-
-    console.log(
-      `Server running on http://localhost:${PORT}`
-    );
-
-    console.log(
-      `Admin API: http://localhost:${PORT}/api/admin`
-    );
-
-    console.log(
-      `Admin Test: http://localhost:${PORT}/api/admin/test`
-    );
-
-    console.log(
-      `Game API: http://localhost:${PORT}/api/game`
-    );
-
-    console.log(
-      `Game Test: http://localhost:${PORT}/api/game/test`
-    );
-
-    console.log(
-      `Leaderboard API: http://localhost:${PORT}/api/leaderboard`
-    );
-
-    console.log(
-      `Internship API: http://localhost:${PORT}/api/internships`
-    );
-
-    console.log(
-      `Internship Test: http://localhost:${PORT}/api/internships/test`
-    );
-
-    console.log(
-      "================================="
-    );
-  }
-);
+// START
+startServer();
